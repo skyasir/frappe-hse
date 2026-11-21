@@ -3,6 +3,7 @@
 
 import frappe
 from frappe import _
+from frappe.query_builder.functions import Sum
 from frappe.utils import add_months, cint, flt, get_first_day, get_last_day, getdate
 
 from frappe_hse.api import days_since_last_lti
@@ -44,9 +45,11 @@ def build_row(company, start, base):
 		filters={"docstatus": 1, "incident_date": ("between", (start, end)), **by_company},
 		fields=["classification", "total_days_lost", "incident_type"],
 	)
-	manhours = flt(
-		frappe.db.get_value("HSE Manhours", {"period_start": start, **by_company}, "sum(total_manhours)")
-	)
+	mh = frappe.qb.DocType("HSE Manhours")
+	query = frappe.qb.from_(mh).select(Sum(mh.total_manhours)).where(mh.period_start == start)
+	if company:
+		query = query.where(mh.company == company)
+	manhours = flt(query.run()[0][0])
 	row = frappe._dict(month=start.strftime("%b %Y"), period_start=start, manhours=manhours)
 	for key, classification in COUNTS:
 		row[key] = sum(1 for i in incidents if i.classification == classification)
