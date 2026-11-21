@@ -1,0 +1,468 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "incident_type",
+  "classification",
+  "column_break_1",
+  "company",
+  "incident_datetime",
+  "incident_date",
+  "status",
+  "column_break_2",
+  "reported_by",
+  "reported_by_name",
+  "is_reportable",
+  "client_notified_on",
+  "where_section",
+  "location",
+  "exact_location",
+  "customer",
+  "column_break_3",
+  "project",
+  "asset",
+  "asset_name",
+  "vehicle_no",
+  "what_section",
+  "description",
+  "immediate_action",
+  "potential_section",
+  "likelihood",
+  "severity_rating",
+  "risk_score",
+  "risk_level",
+  "people_section",
+  "persons",
+  "total_days_lost",
+  "loss_section",
+  "property_damage_cost",
+  "spill_volume_litres",
+  "column_break_loss",
+  "spill_substance",
+  "investigation_tab",
+  "investigation_lead",
+  "investigation_lead_name",
+  "investigation_due",
+  "column_break_inv",
+  "investigation_completed_on",
+  "root_cause_category",
+  "findings_section",
+  "why_analysis",
+  "root_cause",
+  "lessons_learned",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "HSE-INC-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HSE-INC-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Incident Type",
+   "options": "\nInjury\nNear Miss\nVehicle Incident\nProperty Damage\nEnvironmental Spill\nFire\nGas Release\nDangerous Occurrence\nSecurity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "classification",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Classification",
+   "options": "\nNear Miss\nNon-Injury\nFirst Aid Case\nMedical Treatment Case\nRestricted Work Case\nLost Time Injury\nFatality",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Date and Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "incident_date",
+   "fieldtype": "Date",
+   "hidden": 1,
+   "label": "Incident Date",
+   "read_only": 1
+  },
+  {
+   "default": "Reported",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Reported\nUnder Investigation\nActions Open\nClosed\nCancelled",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reported_by",
+   "fieldtype": "Link",
+   "label": "Reported By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "reported_by.employee_name",
+   "fieldname": "reported_by_name",
+   "fieldtype": "Data",
+   "label": "Reported By Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "is_reportable",
+   "fieldtype": "Check",
+   "label": "Reportable to Client"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "is_reportable",
+   "fieldname": "client_notified_on",
+   "fieldtype": "Datetime",
+   "label": "Client Notified On"
+  },
+  {
+   "fieldname": "where_section",
+   "fieldtype": "Section Break",
+   "label": "Where"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "exact_location",
+   "fieldtype": "Data",
+   "label": "Exact Spot"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Client / Site Owner",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Equipment Involved",
+   "options": "Asset"
+  },
+  {
+   "fetch_from": "asset.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "label": "Equipment Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Vehicle No"
+  },
+  {
+   "fieldname": "what_section",
+   "fieldtype": "Section Break",
+   "label": "What Happened"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "immediate_action",
+   "fieldtype": "Small Text",
+   "label": "Immediate Action Taken"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "potential_section",
+   "fieldtype": "Section Break",
+   "label": "Potential Severity"
+  },
+  {
+   "fieldname": "likelihood",
+   "fieldtype": "Select",
+   "label": "Likelihood",
+   "options": "\n1 - Rare\n2 - Unlikely\n3 - Possible\n4 - Likely\n5 - Almost Certain"
+  },
+  {
+   "fieldname": "severity_rating",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "\n1 - Insignificant\n2 - Minor\n3 - Moderate\n4 - Major\n5 - Catastrophic"
+  },
+  {
+   "fieldname": "risk_score",
+   "fieldtype": "Int",
+   "label": "Potential Risk Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Potential Risk Level",
+   "options": "\nLow\nMedium\nHigh\nExtreme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "people_section",
+   "fieldtype": "Section Break",
+   "label": "People Involved"
+  },
+  {
+   "fieldname": "persons",
+   "fieldtype": "Table",
+   "label": "People",
+   "options": "HSE Incident Person"
+  },
+  {
+   "fieldname": "total_days_lost",
+   "fieldtype": "Int",
+   "label": "Total Days Lost",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "loss_section",
+   "fieldtype": "Section Break",
+   "label": "Losses"
+  },
+  {
+   "fieldname": "property_damage_cost",
+   "fieldtype": "Currency",
+   "label": "Property Damage Cost"
+  },
+  {
+   "depends_on": "eval:doc.incident_type=='Environmental Spill'",
+   "fieldname": "spill_volume_litres",
+   "fieldtype": "Float",
+   "label": "Spill Volume (Litres)"
+  },
+  {
+   "fieldname": "column_break_loss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.incident_type=='Environmental Spill'",
+   "fieldname": "spill_substance",
+   "fieldtype": "Data",
+   "label": "Substance Spilled"
+  },
+  {
+   "fieldname": "investigation_tab",
+   "fieldtype": "Tab Break",
+   "label": "Investigation"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "investigation_lead",
+   "fieldtype": "Link",
+   "label": "Investigation Lead",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "investigation_lead.employee_name",
+   "fieldname": "investigation_lead_name",
+   "fieldtype": "Data",
+   "label": "Lead Name",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "investigation_due",
+   "fieldtype": "Date",
+   "label": "Investigation Due"
+  },
+  {
+   "fieldname": "column_break_inv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "investigation_completed_on",
+   "fieldtype": "Date",
+   "label": "Investigation Completed On",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "root_cause_category",
+   "fieldtype": "Select",
+   "label": "Root Cause Category",
+   "options": "\nHuman Factors\nInadequate Procedure\nInadequate Training\nEquipment Failure\nInadequate Supervision\nWork Environment\nCommunication\nRisk Not Assessed\nOther"
+  },
+  {
+   "fieldname": "findings_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "why_analysis",
+   "fieldtype": "Small Text",
+   "label": "5-Why Analysis"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "root_cause",
+   "fieldtype": "Small Text",
+   "label": "Root Cause"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "lessons_learned",
+   "fieldtype": "Small Text",
+   "label": "Lessons Learned"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "HSE Incident",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Follow-up",
+   "link_doctype": "HSE Corrective Action",
+   "link_fieldname": "incident"
+  }
+ ],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Incident",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "incident_type,classification,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "incident_datetime",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "checkpoint",
+  "planned_time",
+  "actual_time",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "columns": 3,
+   "fieldname": "checkpoint",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Checkpoint / Rest Stop",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "planned_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Planned"
+  },
+  {
+   "columns": 2,
+   "fieldname": "actual_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Actual"
+  },
+  {
+   "columns": 3,
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Journey Checkpoint",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

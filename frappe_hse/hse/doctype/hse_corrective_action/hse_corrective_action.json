@@ -1,0 +1,267 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "action",
+  "action_type",
+  "priority",
+  "column_break_1",
+  "company",
+  "assigned_to",
+  "assigned_to_name",
+  "due_date",
+  "column_break_2",
+  "status",
+  "is_overdue",
+  "source_section",
+  "source",
+  "incident",
+  "observation",
+  "column_break_3",
+  "equipment_inspection",
+  "risk_assessment",
+  "closure_section",
+  "completed_on",
+  "completion_notes",
+  "column_break_4",
+  "verified_by",
+  "verified_on",
+  "evidence"
+ ],
+ "fields": [
+  {
+   "default": "HSE-CA-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HSE-CA-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "action",
+   "fieldtype": "Small Text",
+   "label": "Action",
+   "reqd": 1
+  },
+  {
+   "default": "Corrective",
+   "fieldname": "action_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type",
+   "options": "Corrective\nPreventive"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nCritical"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Action Owner",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "assigned_to.employee_name",
+   "fieldname": "assigned_to_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Owner Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nCompleted\nVerified\nCancelled"
+  },
+  {
+   "fieldname": "is_overdue",
+   "fieldtype": "Check",
+   "in_standard_filter": 1,
+   "label": "Overdue",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_section",
+   "fieldtype": "Section Break",
+   "label": "Raised From"
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source",
+   "options": "\nIncident\nObservation\nInspection\nAudit\nRisk Assessment\nOther"
+  },
+  {
+   "depends_on": "eval:doc.source=='Incident'",
+   "fieldname": "incident",
+   "fieldtype": "Link",
+   "label": "Incident",
+   "options": "HSE Incident"
+  },
+  {
+   "depends_on": "eval:doc.source=='Observation'",
+   "fieldname": "observation",
+   "fieldtype": "Link",
+   "label": "Observation",
+   "options": "HSE Observation"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.source=='Inspection'",
+   "fieldname": "equipment_inspection",
+   "fieldtype": "Link",
+   "label": "Equipment Inspection",
+   "options": "Equipment Inspection"
+  },
+  {
+   "depends_on": "eval:doc.source=='Risk Assessment'",
+   "fieldname": "risk_assessment",
+   "fieldtype": "Link",
+   "label": "Risk Assessment",
+   "options": "HSE Risk Assessment"
+  },
+  {
+   "fieldname": "closure_section",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "fieldname": "completed_on",
+   "fieldtype": "Date",
+   "label": "Completed On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "completion_notes",
+   "fieldtype": "Small Text",
+   "label": "Completion Notes"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verified_by",
+   "fieldtype": "Link",
+   "label": "Verified By",
+   "no_copy": 1,
+   "options": "User"
+  },
+  {
+   "fieldname": "verified_on",
+   "fieldtype": "Date",
+   "label": "Verified On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "evidence",
+   "fieldtype": "Attach",
+   "label": "Evidence"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Corrective Action",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "search_fields": "assigned_to_name,status,due_date",
+ "show_title_field_in_link": 1,
+ "sort_field": "due_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "action",
+ "track_changes": 1
+}

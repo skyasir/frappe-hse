@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "person_type",
+  "employee",
+  "person_name",
+  "injury_type",
+  "body_part",
+  "treatment",
+  "days_lost"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "default": "Employee",
+   "fieldname": "person_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Person",
+   "options": "Employee\nContractor\nThird Party"
+  },
+  {
+   "columns": 2,
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "employee.employee_name",
+   "fetch_if_empty": 1,
+   "fieldname": "person_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+  },
+  {
+   "columns": 2,
+   "fieldname": "injury_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Injury",
+   "options": "\nNone\nCut / Laceration\nBruise / Contusion\nFracture\nSprain / Strain\nBurn\nEye Injury\nInhalation / Gas Exposure\nHeat Stress\nCrush\nOther"
+  },
+  {
+   "fieldname": "body_part",
+   "fieldtype": "Data",
+   "label": "Body Part"
+  },
+  {
+   "columns": 1,
+   "fieldname": "treatment",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Treatment",
+   "options": "\nNone\nFirst Aid\nMedical Treatment\nHospitalised"
+  },
+  {
+   "columns": 1,
+   "fieldname": "days_lost",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Days Lost"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Incident Person",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

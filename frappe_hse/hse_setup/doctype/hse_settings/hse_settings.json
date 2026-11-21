@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "hse_manager",
+  "expiry_warning_days",
+  "column_break_gen",
+  "frequency_base",
+  "critical_lift_threshold",
+  "equipment_section",
+  "block_dispatch_on_invalid_certificate",
+  "block_operator_without_competency",
+  "column_break_eq",
+  "operator_certificate_type",
+  "driver_certificate_type",
+  "ppe_section",
+  "ppe_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "description": "Gets incident and overdue-action alerts",
+   "fieldname": "hse_manager",
+   "fieldtype": "Link",
+   "label": "HSE Manager",
+   "options": "User"
+  },
+  {
+   "default": "30",
+   "fieldname": "expiry_warning_days",
+   "fieldtype": "Int",
+   "label": "Warn Before Expiry (Days)"
+  },
+  {
+   "fieldname": "column_break_gen",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1000000",
+   "description": "LTIFR and TRIR are per this many man-hours (1,000,000 for OPAL/PDO, 200,000 for OSHA)",
+   "fieldname": "frequency_base",
+   "fieldtype": "Select",
+   "label": "Frequency Rate Base",
+   "options": "1000000\n200000"
+  },
+  {
+   "default": "75",
+   "fieldname": "critical_lift_threshold",
+   "fieldtype": "Percent",
+   "label": "Critical Lift Above (% of Crane Capacity)"
+  },
+  {
+   "fieldname": "equipment_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment and Operators"
+  },
+  {
+   "default": "1",
+   "description": "Needs ERPNext Asset Leasing. Stops dispatch of equipment that is not fit for use or whose certificate has expired.",
+   "fieldname": "block_dispatch_on_invalid_certificate",
+   "fieldtype": "Check",
+   "label": "Block Rental Dispatch Without a Valid Equipment Certificate"
+  },
+  {
+   "default": "1",
+   "fieldname": "block_operator_without_competency",
+   "fieldtype": "Check",
+   "label": "Block Wet Hire Without a Competent Operator"
+  },
+  {
+   "fieldname": "column_break_eq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "operator_certificate_type",
+   "fieldtype": "Link",
+   "label": "Operator Certificate",
+   "options": "HSE Certificate Type"
+  },
+  {
+   "description": "Checked on journey plans, e.g. OPAL defensive driving",
+   "fieldname": "driver_certificate_type",
+   "fieldtype": "Link",
+   "label": "Driver Certificate",
+   "options": "HSE Certificate Type"
+  },
+  {
+   "fieldname": "ppe_section",
+   "fieldtype": "Section Break",
+   "label": "PPE"
+  },
+  {
+   "description": "When set, submitting a PPE Issue posts a Material Issue from this warehouse",
+   "fieldname": "ppe_warehouse",
+   "fieldtype": "Link",
+   "label": "PPE Store Warehouse",
+   "options": "Warehouse"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE Setup",
+ "name": "HSE Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 0,
+   "role": "HSE Officer",
+   "share": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

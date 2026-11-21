@@ -1,0 +1,27 @@
+{
+ "attach_print": 0,
+ "channel": "System Notification",
+ "creation": "2026-11-22 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "HSE Incident",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message_type": "Markdown",
+ "minutes_offset": 0,
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Incident Reported",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "HSE Manager"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "Incident reported: {{ doc.title }} ({{ doc.classification }})"
+}

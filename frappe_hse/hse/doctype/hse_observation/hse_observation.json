@@ -1,0 +1,283 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "observation_type",
+  "category",
+  "stop_work",
+  "column_break_1",
+  "company",
+  "observation_date",
+  "observed_by",
+  "observed_by_name",
+  "column_break_2",
+  "status",
+  "closed_on",
+  "where_section",
+  "location",
+  "customer",
+  "column_break_3",
+  "asset",
+  "details_section",
+  "description",
+  "action_taken",
+  "photo",
+  "risk_section",
+  "likelihood",
+  "severity_rating",
+  "risk_score",
+  "risk_level"
+ ],
+ "fields": [
+  {
+   "default": "HSE-OBS-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "HSE-OBS-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "observation_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "\nUnsafe Act\nUnsafe Condition\nPositive Observation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "\nPPE\nHousekeeping\nDriving & Journey\nLifting & Rigging\nWorking at Height\nElectrical\nFire & Hot Work\nConfined Space\nH2S & Gas\nEnvironment & Waste\nTools & Equipment\nManual Handling\nProcedures\nOther",
+   "reqd": 1
+  },
+  {
+   "description": "Stop Work Authority was used",
+   "fieldname": "stop_work",
+   "fieldtype": "Check",
+   "label": "Work Stopped"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "observation_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "observed_by",
+   "fieldtype": "Link",
+   "label": "Observed By",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "observed_by.employee_name",
+   "fieldname": "observed_by_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Observer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nClosed"
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Date",
+   "label": "Closed On",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "where_section",
+   "fieldtype": "Section Break",
+   "label": "Where"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Client / Site Owner",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "label": "Equipment",
+   "options": "Asset"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "What Was Observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Small Text",
+   "label": "Action Taken on the Spot"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "risk_section",
+   "fieldtype": "Section Break",
+   "label": "Risk"
+  },
+  {
+   "fieldname": "likelihood",
+   "fieldtype": "Select",
+   "label": "Likelihood",
+   "options": "\n1 - Rare\n2 - Unlikely\n3 - Possible\n4 - Likely\n5 - Almost Certain"
+  },
+  {
+   "fieldname": "severity_rating",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "\n1 - Insignificant\n2 - Minor\n3 - Moderate\n4 - Major\n5 - Catastrophic"
+  },
+  {
+   "fieldname": "risk_score",
+   "fieldtype": "Int",
+   "label": "Risk Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "risk_level",
+   "fieldtype": "Select",
+   "label": "Risk Level",
+   "options": "\nLow\nMedium\nHigh\nExtreme",
+   "read_only": 1
+  }
+ ],
+ "image_field": "photo",
+ "links": [
+  {
+   "group": "Follow-up",
+   "link_doctype": "HSE Corrective Action",
+   "link_fieldname": "observation"
+  }
+ ],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Observation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employee",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "observation_type,category,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "observation_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "category",
+ "track_changes": 1
+}

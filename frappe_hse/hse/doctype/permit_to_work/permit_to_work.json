@@ -1,0 +1,440 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "permit_type",
+  "work_description",
+  "column_break_1",
+  "company",
+  "location",
+  "customer",
+  "project",
+  "column_break_2",
+  "status",
+  "valid_from",
+  "valid_to",
+  "people_section",
+  "performing_authority",
+  "performing_authority_name",
+  "crew_size",
+  "column_break_3",
+  "issuing_authority",
+  "issuing_authority_name",
+  "area_authority",
+  "risk_section",
+  "risk_assessment",
+  "isolation_required",
+  "isolation_details",
+  "column_break_4",
+  "ppe_required",
+  "fire_watch_required",
+  "standby_person",
+  "hazards_section",
+  "hazards",
+  "gas_section",
+  "gas_test_required",
+  "gas_tests",
+  "lifting_section",
+  "crane",
+  "crane_name",
+  "load_description",
+  "load_weight_tonnes",
+  "column_break_lift",
+  "working_radius_m",
+  "capacity_at_radius_tonnes",
+  "utilisation_percent",
+  "is_critical_lift",
+  "lifting_plan",
+  "closure_section",
+  "closed_on",
+  "area_left_safe",
+  "column_break_5",
+  "closure_remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PTW-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PTW-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "permit_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Permit Type",
+   "options": "\nHot Work\nCold Work\nWorking at Height\nConfined Space Entry\nLifting Operation\nExcavation\nElectrical Isolation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_description",
+   "fieldtype": "Small Text",
+   "label": "Work Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Location",
+   "options": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Client / Site Owner",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nRequested\nApproved\nActive\nSuspended\nClosed\nRejected\nExpired",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Valid To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "people_section",
+   "fieldtype": "Section Break",
+   "label": "Authorities"
+  },
+  {
+   "description": "Leads the crew doing the work",
+   "fieldname": "performing_authority",
+   "fieldtype": "Link",
+   "label": "Performing Authority",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "performing_authority.employee_name",
+   "fieldname": "performing_authority_name",
+   "fieldtype": "Data",
+   "label": "Performing Authority Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "crew_size",
+   "fieldtype": "Int",
+   "label": "Crew Size"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Approves and issues the permit",
+   "fieldname": "issuing_authority",
+   "fieldtype": "Link",
+   "label": "Issuing Authority",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "issuing_authority.employee_name",
+   "fieldname": "issuing_authority_name",
+   "fieldtype": "Data",
+   "label": "Issuing Authority Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "area_authority",
+   "fieldtype": "Data",
+   "label": "Area Authority (Client)"
+  },
+  {
+   "fieldname": "risk_section",
+   "fieldtype": "Section Break",
+   "label": "Risk Controls"
+  },
+  {
+   "fieldname": "risk_assessment",
+   "fieldtype": "Link",
+   "label": "Risk Assessment / JSA",
+   "options": "HSE Risk Assessment"
+  },
+  {
+   "fieldname": "isolation_required",
+   "fieldtype": "Check",
+   "label": "Isolation Required"
+  },
+  {
+   "depends_on": "isolation_required",
+   "fieldname": "isolation_details",
+   "fieldtype": "Small Text",
+   "label": "Isolation Details"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ppe_required",
+   "fieldtype": "Small Text",
+   "label": "PPE Required"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Hot Work'",
+   "fieldname": "fire_watch_required",
+   "fieldtype": "Check",
+   "label": "Fire Watch Required"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Confined Space Entry'",
+   "fieldname": "standby_person",
+   "fieldtype": "Data",
+   "label": "Standby / Hole Watch"
+  },
+  {
+   "fieldname": "hazards_section",
+   "fieldtype": "Section Break",
+   "label": "Hazards and Controls"
+  },
+  {
+   "fieldname": "hazards",
+   "fieldtype": "Table",
+   "label": "Hazards",
+   "options": "HSE Permit Hazard"
+  },
+  {
+   "depends_on": "gas_test_required",
+   "fieldname": "gas_section",
+   "fieldtype": "Section Break",
+   "label": "Gas Testing"
+  },
+  {
+   "fieldname": "gas_test_required",
+   "fieldtype": "Check",
+   "label": "Gas Test Required"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "gas_test_required",
+   "fieldname": "gas_tests",
+   "fieldtype": "Table",
+   "label": "Gas Tests",
+   "options": "HSE Gas Test"
+  },
+  {
+   "depends_on": "eval:doc.permit_type=='Lifting Operation'",
+   "fieldname": "lifting_section",
+   "fieldtype": "Section Break",
+   "label": "Lifting Plan"
+  },
+  {
+   "fieldname": "crane",
+   "fieldtype": "Link",
+   "label": "Crane",
+   "options": "Asset"
+  },
+  {
+   "fetch_from": "crane.asset_name",
+   "fieldname": "crane_name",
+   "fieldtype": "Data",
+   "label": "Crane Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "load_description",
+   "fieldtype": "Data",
+   "label": "Load"
+  },
+  {
+   "fieldname": "load_weight_tonnes",
+   "fieldtype": "Float",
+   "label": "Load incl. Rigging (t)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lift",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_radius_m",
+   "fieldtype": "Float",
+   "label": "Working Radius (m)",
+   "precision": "1"
+  },
+  {
+   "fieldname": "capacity_at_radius_tonnes",
+   "fieldtype": "Float",
+   "label": "Crane Capacity at Radius (t)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "utilisation_percent",
+   "fieldtype": "Percent",
+   "label": "Utilisation",
+   "read_only": 1
+  },
+  {
+   "description": "Utilisation is above the threshold in HSE Settings",
+   "fieldname": "is_critical_lift",
+   "fieldtype": "Check",
+   "label": "Critical Lift",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lifting_plan",
+   "fieldtype": "Attach",
+   "label": "Lift Plan",
+   "mandatory_depends_on": "is_critical_lift"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "closure_section",
+   "fieldtype": "Section Break",
+   "label": "Closure"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "closed_on",
+   "fieldtype": "Datetime",
+   "label": "Closed On",
+   "no_copy": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "area_left_safe",
+   "fieldtype": "Check",
+   "label": "Work Area Left Safe"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "closure_remarks",
+   "fieldtype": "Small Text",
+   "label": "Closure Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Permit to Work",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Permit to Work",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "search_fields": "permit_type,status,location",
+ "show_title_field_in_link": 1,
+ "sort_field": "valid_from",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "permit_type",
+ "track_changes": 1
+}

@@ -1,0 +1,297 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "company",
+  "vehicle",
+  "vehicle_name",
+  "vehicle_no",
+  "column_break_1",
+  "driver",
+  "driver_name",
+  "journey_manager",
+  "column_break_2",
+  "status",
+  "customer",
+  "cargo",
+  "route_section",
+  "from_location",
+  "to_location",
+  "distance_km",
+  "route_notes",
+  "column_break_3",
+  "planned_departure",
+  "planned_arrival",
+  "actual_departure",
+  "actual_arrival",
+  "checks_section",
+  "vehicle_inspected",
+  "ivms_working",
+  "column_break_4",
+  "driver_rested",
+  "night_driving",
+  "driver_certificate_valid",
+  "checkpoints_section",
+  "checkpoints"
+ ],
+ "fields": [
+  {
+   "default": "JMP-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "JMP-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle / Tanker",
+   "options": "Asset",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "vehicle.asset_name",
+   "fieldname": "vehicle_name",
+   "fieldtype": "Data",
+   "label": "Vehicle Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vehicle_no",
+   "fieldtype": "Data",
+   "label": "Plate No"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fetch_from": "driver.employee_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "journey_manager",
+   "fieldtype": "Link",
+   "label": "Journey Manager",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Planned",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Planned\nApproved\nIn Transit\nArrived\nCancelled"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "cargo",
+   "fieldtype": "Data",
+   "label": "Cargo / Load"
+  },
+  {
+   "fieldname": "route_section",
+   "fieldtype": "Section Break",
+   "label": "Route"
+  },
+  {
+   "fieldname": "from_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "distance_km",
+   "fieldtype": "Float",
+   "label": "Distance (km)",
+   "precision": "0"
+  },
+  {
+   "fieldname": "route_notes",
+   "fieldtype": "Small Text",
+   "label": "Route Hazards and Notes"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_departure",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Planned Departure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "planned_arrival",
+   "fieldtype": "Datetime",
+   "label": "Planned Arrival"
+  },
+  {
+   "fieldname": "actual_departure",
+   "fieldtype": "Datetime",
+   "label": "Actual Departure",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "actual_arrival",
+   "fieldtype": "Datetime",
+   "label": "Actual Arrival",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "checks_section",
+   "fieldtype": "Section Break",
+   "label": "Pre-Journey Checks"
+  },
+  {
+   "fieldname": "vehicle_inspected",
+   "fieldtype": "Check",
+   "label": "Vehicle Pre-Trip Inspection Done"
+  },
+  {
+   "fieldname": "ivms_working",
+   "fieldtype": "Check",
+   "label": "IVMS Working"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "driver_rested",
+   "fieldtype": "Check",
+   "label": "Driver Fit and Rested (Fatigue Declaration)"
+  },
+  {
+   "description": "Needs journey manager approval",
+   "fieldname": "night_driving",
+   "fieldtype": "Check",
+   "label": "Night Driving"
+  },
+  {
+   "fieldname": "driver_certificate_valid",
+   "fieldtype": "Check",
+   "label": "Driver Certificate Valid",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "checkpoints_section",
+   "fieldtype": "Section Break",
+   "label": "Checkpoints and Rest Stops"
+  },
+  {
+   "fieldname": "checkpoints",
+   "fieldtype": "Table",
+   "label": "Checkpoints",
+   "options": "Journey Checkpoint"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Journey Management Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "search_fields": "driver_name,vehicle,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "planned_departure",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "driver_name",
+ "track_changes": 1
+}

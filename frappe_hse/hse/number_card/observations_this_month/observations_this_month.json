@@ -1,0 +1,23 @@
+{
+ "color": "#5E64FF",
+ "creation": "2026-11-22 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "HSE Observation",
+ "dynamic_filters_json": "[[\"HSE Observation\", \"company\", \"=\", \"frappe.defaults.get_user_default(\\\"Company\\\")\"]]",
+ "filters_json": "[[\"HSE Observation\", \"observation_date\", \"Timespan\", \"this month\"]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Observations This Month",
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Observations This Month",
+ "owner": "Administrator",
+ "show_full_number": 1,
+ "show_percentage_stats": 0,
+ "stats_time_interval": "Monthly",
+ "type": "Document Type"
+}

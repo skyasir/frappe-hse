@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "test_time",
+  "oxygen_percent",
+  "lel_percent",
+  "h2s_ppm",
+  "co_ppm",
+  "result",
+  "tested_by"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "test_time",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Time",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "oxygen_percent",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "O2 %",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "fieldname": "lel_percent",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "LEL %",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "fieldname": "h2s_ppm",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "H2S ppm",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "fieldname": "co_ppm",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "CO ppm",
+   "precision": "1"
+  },
+  {
+   "columns": 1,
+   "fieldname": "result",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Result",
+   "options": "\nPass\nFail",
+   "read_only": 1
+  },
+  {
+   "columns": 3,
+   "fieldname": "tested_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tested By"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Gas Test",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
