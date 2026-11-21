@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:MH-{company}-{period_start}",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "period_start",
+  "column_break_1",
+  "employee_headcount",
+  "contractor_headcount",
+  "hours_section",
+  "employee_manhours",
+  "contractor_manhours",
+  "column_break_2",
+  "total_manhours",
+  "km_driven"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "description": "First day of the month",
+   "fieldname": "period_start",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Month Starting",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employee_headcount",
+   "fieldtype": "Int",
+   "label": "Employee Headcount"
+  },
+  {
+   "fieldname": "contractor_headcount",
+   "fieldtype": "Int",
+   "label": "Contractor Headcount"
+  },
+  {
+   "fieldname": "hours_section",
+   "fieldtype": "Section Break",
+   "label": "Man-hours"
+  },
+  {
+   "fieldname": "employee_manhours",
+   "fieldtype": "Float",
+   "label": "Employee Man-hours",
+   "precision": "0"
+  },
+  {
+   "fieldname": "contractor_manhours",
+   "fieldtype": "Float",
+   "label": "Contractor Man-hours",
+   "precision": "0"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total_manhours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Man-hours",
+   "precision": "0",
+   "read_only": 1
+  },
+  {
+   "description": "For the motor vehicle incident rate",
+   "fieldname": "km_driven",
+   "fieldtype": "Float",
+   "label": "Kilometres Driven",
+   "precision": "0"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE Setup",
+ "name": "HSE Manhours",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "sort_field": "period_start",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

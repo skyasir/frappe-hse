@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:certificate_type",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "certificate_type",
+  "applies_to",
+  "validity_months",
+  "column_break_1",
+  "issuing_body",
+  "is_mandatory",
+  "description"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "certificate_type",
+   "fieldtype": "Data",
+   "label": "Certificate Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "Person",
+   "fieldname": "applies_to",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Applies To",
+   "options": "Person\nEquipment",
+   "reqd": 1
+  },
+  {
+   "description": "Fills the expiry date from the issue date",
+   "fieldname": "validity_months",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Validity (Months)"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issuing_body",
+   "fieldtype": "Data",
+   "label": "Typical Issuing Body"
+  },
+  {
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mandatory for Field Staff"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE Setup",
+ "name": "HSE Certificate Type",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "applies_to",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

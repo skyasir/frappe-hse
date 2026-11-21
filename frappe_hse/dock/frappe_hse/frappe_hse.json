@@ -1,0 +1,39 @@
+{
+ "app": "frappe_hse",
+ "creation": "2026-11-22 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Dock",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "house",
+   "link_to": "HSE",
+   "link_type": "Workspace",
+   "title": "Home"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "shield-check",
+   "link_to": "HSE",
+   "link_type": "Sidebar",
+   "title": "HSE"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "settings",
+   "link_to": "HSE Setup",
+   "link_type": "Sidebar",
+   "title": "HSE Setup"
+  }
+ ],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "frappe_hse",
+ "owner": "Administrator",
+ "standard": 1,
+ "user": ""
+}

@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hazard",
+  "control_measure",
+  "confirmed"
+ ],
+ "fields": [
+  {
+   "columns": 4,
+   "fieldname": "hazard",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hazard",
+   "reqd": 1
+  },
+  {
+   "columns": 5,
+   "fieldname": "control_measure",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Control Measure",
+   "reqd": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "confirmed",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Done"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE Permit Hazard",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

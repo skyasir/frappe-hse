@@ -1,0 +1,63 @@
+{
+ "cards": [
+  {
+   "card": "Days Since Last LTI"
+  },
+  {
+   "card": "Open Incidents"
+  },
+  {
+   "card": "Active Permits"
+  },
+  {
+   "card": "Overdue Corrective Actions"
+  },
+  {
+   "card": "Certificates Expiring"
+  },
+  {
+   "card": "Equipment Not Fit for Use"
+  },
+  {
+   "card": "Observations This Month"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Incidents by Month",
+   "width": "Full"
+  },
+  {
+   "chart": "Incidents by Classification",
+   "width": "Half"
+  },
+  {
+   "chart": "Incidents by Type",
+   "width": "Half"
+  },
+  {
+   "chart": "Observations by Category",
+   "width": "Half"
+  },
+  {
+   "chart": "Corrective Actions by Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Permits by Type",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-11-22 10:00:00.000000",
+ "dashboard_name": "HSE",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE",
+ "owner": "Administrator"
+}

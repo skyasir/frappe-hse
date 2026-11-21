@@ -1,0 +1,395 @@
+{
+ "app": "frappe_hse",
+ "charts": [
+  {
+   "chart_name": "Incidents by Month",
+   "label": "Incidents by Month"
+  },
+  {
+   "chart_name": "Incidents by Classification",
+   "label": "Incidents by Classification"
+  },
+  {
+   "chart_name": "Incidents by Type",
+   "label": "Incidents by Type"
+  }
+ ],
+ "content": "[{\"id\": \"n_days_since_l\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Days Since Last LTI\", \"col\": 3}}, {\"id\": \"n_open_inciden\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Open Incidents\", \"col\": 3}}, {\"id\": \"n_active_permi\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Active Permits\", \"col\": 3}}, {\"id\": \"n_overdue_corr\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Overdue Corrective Actions\", \"col\": 3}}, {\"id\": \"n_certificates\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Certificates Expiring\", \"col\": 3}}, {\"id\": \"n_equipment_no\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Equipment Not Fit for Use\", \"col\": 3}}, {\"id\": \"h_charts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Trends</b></span>\", \"col\": 12}}, {\"id\": \"c_incidents_by\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Incidents by Month\", \"col\": 12}}, {\"id\": \"c_incidents_by\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Incidents by Classification\", \"col\": 6}}, {\"id\": \"c_incidents_by\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Incidents by Type\", \"col\": 6}}, {\"id\": \"h_quick\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Quick Access</b></span>\", \"col\": 12}}, {\"id\": \"s_hse_incident\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HSE Incident\", \"col\": 3}}, {\"id\": \"s_permit_to_wo\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Permit to Work\", \"col\": 3}}, {\"id\": \"s_hse_observat\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HSE Observation\", \"col\": 3}}, {\"id\": \"s_hse_correcti\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HSE Corrective Action\", \"col\": 3}}, {\"id\": \"s_equipment_in\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Equipment Inspection\", \"col\": 3}}, {\"id\": \"s_journey_mana\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Journey Management Plan\", \"col\": 3}}, {\"id\": \"s_hse_risk_ass\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HSE Risk Assessment\", \"col\": 3}}, {\"id\": \"s_toolbox_talk\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Toolbox Talk\", \"col\": 3}}, {\"id\": \"s_hse_competen\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"HSE Competency\", \"col\": 3}}, {\"id\": \"s_ppe_issue\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"PPE Issue\", \"col\": 3}}, {\"id\": \"h_masters\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Records and Reports</b></span>\", \"col\": 12}}, {\"id\": \"c_incidents_an\", \"type\": \"card\", \"data\": {\"card_name\": \"Incidents and Actions\", \"col\": 4}}, {\"id\": \"c_safe_work\", \"type\": \"card\", \"data\": {\"card_name\": \"Safe Work\", \"col\": 4}}, {\"id\": \"c_equipment_an\", \"type\": \"card\", \"data\": {\"card_name\": \"Equipment and Journeys\", \"col\": 4}}, {\"id\": \"c_people\", \"type\": \"card\", \"data\": {\"card_name\": \"People\", \"col\": 4}}, {\"id\": \"c_reports\", \"type\": \"card\", \"data\": {\"card_name\": \"Reports\", \"col\": 4}}, {\"id\": \"c_setup\", \"type\": \"card\", \"data\": {\"card_name\": \"Setup\", \"col\": 4}}]",
+ "creation": "2026-11-22 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "shield-check",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "HSE",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Incidents and Actions",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Incident",
+   "link_count": 0,
+   "link_to": "HSE Incident",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Corrective Action",
+   "link_count": 0,
+   "link_to": "HSE Corrective Action",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Observation",
+   "link_count": 0,
+   "link_to": "HSE Observation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Safe Work",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Permit to Work",
+   "link_count": 0,
+   "link_to": "Permit to Work",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Risk Assessment",
+   "link_count": 0,
+   "link_to": "HSE Risk Assessment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Toolbox Talk",
+   "link_count": 0,
+   "link_to": "Toolbox Talk",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Equipment and Journeys",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Equipment Inspection",
+   "link_count": 0,
+   "link_to": "Equipment Inspection",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Journey Management Plan",
+   "link_count": 0,
+   "link_to": "Journey Management Plan",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Asset",
+   "link_count": 0,
+   "link_to": "Asset",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "People",
+   "link_count": 3,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Competency",
+   "link_count": 0,
+   "link_to": "HSE Competency",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "PPE Issue",
+   "link_count": 0,
+   "link_to": "PPE Issue",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee",
+   "link_count": 0,
+   "link_to": "Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "HSE Statistics",
+   "link_count": 0,
+   "link_to": "HSE Statistics",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Certificate Expiry Register",
+   "link_count": 0,
+   "link_to": "Certificate Expiry Register",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Setup",
+   "link_count": 4,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Settings",
+   "link_count": 0,
+   "link_to": "HSE Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Certificate Type",
+   "link_count": 0,
+   "link_to": "HSE Certificate Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Inspection Template",
+   "link_count": 0,
+   "link_to": "HSE Inspection Template",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "HSE Manhours",
+   "link_count": 0,
+   "link_to": "HSE Manhours",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "HSE",
+ "number_cards": [
+  {
+   "label": "Days Since Last LTI",
+   "number_card_name": "Days Since Last LTI"
+  },
+  {
+   "label": "Open Incidents",
+   "number_card_name": "Open Incidents"
+  },
+  {
+   "label": "Active Permits",
+   "number_card_name": "Active Permits"
+  },
+  {
+   "label": "Overdue Corrective Actions",
+   "number_card_name": "Overdue Corrective Actions"
+  },
+  {
+   "label": "Certificates Expiring",
+   "number_card_name": "Certificates Expiring"
+  },
+  {
+   "label": "Equipment Not Fit for Use",
+   "number_card_name": "Equipment Not Fit for Use"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 40.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "HSE Incident",
+   "link_to": "HSE Incident",
+   "stats_filter": "[[\"HSE Incident\", \"status\", \"!=\", \"Closed\"], [\"HSE Incident\", \"docstatus\", \"=\", 1]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{} Active",
+   "label": "Permit to Work",
+   "link_to": "Permit to Work",
+   "stats_filter": "[[\"Permit to Work\", \"status\", \"=\", \"Active\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "HSE Observation",
+   "link_to": "HSE Observation",
+   "stats_filter": "[[\"HSE Observation\", \"status\", \"=\", \"Open\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Overdue",
+   "label": "HSE Corrective Action",
+   "link_to": "HSE Corrective Action",
+   "stats_filter": "[[\"HSE Corrective Action\", \"is_overdue\", \"=\", 1]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "",
+   "label": "Equipment Inspection",
+   "link_to": "Equipment Inspection",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "format": "{} In Transit",
+   "label": "Journey Management Plan",
+   "link_to": "Journey Management Plan",
+   "stats_filter": "[[\"Journey Management Plan\", \"status\", \"=\", \"In Transit\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "",
+   "label": "HSE Risk Assessment",
+   "link_to": "HSE Risk Assessment",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "",
+   "label": "Toolbox Talk",
+   "link_to": "Toolbox Talk",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "format": "{} Expiring",
+   "label": "HSE Competency",
+   "link_to": "HSE Competency",
+   "stats_filter": "[[\"HSE Competency\", \"status\", \"!=\", \"Valid\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "format": "",
+   "label": "PPE Issue",
+   "link_to": "PPE Issue",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "HSE",
+ "type": "Workspace"
+}

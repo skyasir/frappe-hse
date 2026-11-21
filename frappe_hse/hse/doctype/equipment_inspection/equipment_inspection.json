@@ -1,0 +1,271 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "asset",
+  "asset_name",
+  "asset_category",
+  "column_break_1",
+  "company",
+  "inspection_type",
+  "inspection_date",
+  "template",
+  "column_break_2",
+  "result",
+  "inspected_by",
+  "meter_reading",
+  "certificate_section",
+  "inspection_agency",
+  "certificate_no",
+  "column_break_3",
+  "certificate_expiry",
+  "next_inspection_due",
+  "certificate_file",
+  "readings_section",
+  "readings",
+  "remarks_section",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "EQI-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "EQI-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "asset",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Equipment",
+   "options": "Asset",
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fetch_from": "asset.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Equipment Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "asset.asset_category",
+   "fieldname": "asset_category",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Asset Category",
+   "options": "Asset Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "asset.company",
+   "fetch_if_empty": 1,
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspection_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Type",
+   "options": "\nPre-Use Check\nPeriodic Inspection\nThird-Party Certification\nLoad Test",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Inspection Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Checklist Template",
+   "options": "HSE Inspection Template"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "result",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Result",
+   "options": "\nPass\nPass with Observations\nFail"
+  },
+  {
+   "fieldname": "inspected_by",
+   "fieldtype": "Link",
+   "label": "Inspected By",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "meter_reading",
+   "fieldtype": "Float",
+   "label": "Hour / Km Meter"
+  },
+  {
+   "fieldname": "certificate_section",
+   "fieldtype": "Section Break",
+   "label": "Certification"
+  },
+  {
+   "fieldname": "inspection_agency",
+   "fieldtype": "Link",
+   "label": "Third-Party Agency",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "certificate_no",
+   "fieldtype": "Data",
+   "label": "Certificate No"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "certificate_expiry",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Certificate Valid Until"
+  },
+  {
+   "fieldname": "next_inspection_due",
+   "fieldtype": "Date",
+   "label": "Next Inspection Due"
+  },
+  {
+   "fieldname": "certificate_file",
+   "fieldtype": "Attach",
+   "label": "Certificate Copy"
+  },
+  {
+   "fieldname": "readings_section",
+   "fieldtype": "Section Break",
+   "label": "Checklist"
+  },
+  {
+   "fieldname": "readings",
+   "fieldtype": "Table",
+   "label": "Checklist",
+   "options": "Equipment Inspection Reading"
+  },
+  {
+   "fieldname": "remarks_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Equipment Inspection",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Follow-up",
+   "link_doctype": "HSE Corrective Action",
+   "link_fieldname": "equipment_inspection"
+  }
+ ],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Equipment Inspection",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "search_fields": "asset_name,inspection_type,result",
+ "show_title_field_in_link": 1,
+ "sort_field": "inspection_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "asset_name",
+ "track_changes": 1
+}

@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-11-22 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "topic",
+  "category",
+  "column_break_1",
+  "company",
+  "talk_date",
+  "duration_minutes",
+  "column_break_2",
+  "conducted_by",
+  "conducted_by_name",
+  "location",
+  "attendees_section",
+  "attendees",
+  "attendee_count",
+  "notes_section",
+  "key_points",
+  "questions_raised",
+  "photo",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "TBT-.YYYY.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TBT-.YYYY.-.####",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "topic",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Topic",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "\nPPE\nHousekeeping\nDriving & Journey\nLifting & Rigging\nWorking at Height\nElectrical\nFire & Hot Work\nConfined Space\nH2S & Gas\nEnvironment & Waste\nTools & Equipment\nManual Handling\nProcedures\nOther"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "talk_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "15",
+   "fieldname": "duration_minutes",
+   "fieldtype": "Int",
+   "label": "Duration (Minutes)"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "conducted_by",
+   "fieldtype": "Link",
+   "label": "Conducted By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "conducted_by.employee_name",
+   "fieldname": "conducted_by_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Presenter",
+   "read_only": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Link",
+   "label": "Location",
+   "options": "Location"
+  },
+  {
+   "fieldname": "attendees_section",
+   "fieldtype": "Section Break",
+   "label": "Attendees"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendees",
+   "options": "Toolbox Talk Attendee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attendee_count",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Attendees",
+   "read_only": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Talk Notes"
+  },
+  {
+   "fieldname": "key_points",
+   "fieldtype": "Text Editor",
+   "label": "Key Points"
+  },
+  {
+   "fieldname": "questions_raised",
+   "fieldtype": "Small Text",
+   "label": "Questions Raised"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Toolbox Talk",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-22 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HSE",
+ "name": "Toolbox Talk",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE Officer",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HSE User",
+   "share": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "talk_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "topic",
+ "track_changes": 1
+}
