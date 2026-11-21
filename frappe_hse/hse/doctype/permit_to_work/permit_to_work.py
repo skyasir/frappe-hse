@@ -69,6 +69,8 @@ class PermittoWork(Document):
 				frappe.throw(reason)
 
 	def before_update_after_submit(self):
+		for row in self.gas_tests:
+			row.result = gas_result(row)
 		if self.status == "Active" and get_datetime(self.valid_to) < now_datetime():
 			frappe.throw(_("This permit has passed its Valid To time. Raise a new permit."))
 		if self.status == "Active" and self.gas_test_required and self.gas_tests:
